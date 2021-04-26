@@ -1,4 +1,3 @@
-
 var buttonColours = ["red", "blue", "green", "yellow"];
 
 var gamePattern = [];
@@ -15,6 +14,16 @@ $(document).keypress(function() {
   }
 });
 
+
+$(".start-button").click(function() {
+  if (!started) {
+    $("#level-title").text("Level " + level);
+    nextSequence();
+    started = true;
+  }
+});
+
+
 $(".btn").click(function() {
 
   var userChosenColour = $(this).attr("id");
@@ -25,6 +34,9 @@ $(".btn").click(function() {
 
   checkAnswer(userClickedPattern.length-1);
 });
+
+
+
 
 function checkAnswer(currentLevel) {
 
